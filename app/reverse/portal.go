@@ -163,7 +163,7 @@ func (p *StaticMuxPicker) PickAvailable() (*mux.ClientWorker, error) {
 		if w.client.Closed() {
 			continue
 		}
-		if w.client.ActiveConnections() < minConn {
+		if w.client.ActiveConnections() <= minConn {
 			minConn = w.client.ActiveConnections()
 			minIdx = i
 		}
