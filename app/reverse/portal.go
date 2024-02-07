@@ -225,7 +225,7 @@ func NewPortalWorker(ctx context.Context, client *mux.ClientWorker) (*PortalWork
 	}
 	w.control = &task.Periodic{
 		Execute:  w.heartbeat,
-		Interval: time.Second * 2,
+		Interval: time.Second * 10,
 	}
 	w.control.Start()
 	return w, nil
