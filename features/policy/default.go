@@ -1,9 +1,5 @@
 package policy
 
-import (
-	"time"
-)
-
 // DefaultManager is the implementation of the Manager.
 type DefaultManager struct{}
 
@@ -16,7 +12,7 @@ func (DefaultManager) Type() interface{} {
 func (DefaultManager) ForLevel(level uint32) Session {
 	p := SessionDefault()
 	if level == 1 {
-		p.Timeouts.ConnectionIdle = time.Second * 600
+		// p.Timeouts.ConnectionIdle = time.Second * 600
 	}
 	return p
 }
